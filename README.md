@@ -1,4 +1,5 @@
 # usage
+```
 local ecs = require "ecs.ecs"
 
 local world = ecs.world:new()
@@ -22,3 +23,4 @@ end
 world:add_system(move_sys)
 
 world:update()
+```
