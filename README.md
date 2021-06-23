@@ -13,11 +13,11 @@ entity_mgr:destroy_entity(entity)
 
 local move_sys = ecs.class("move_sys", ecs.system)
 function move_sys:on_update()
-	self.filter = self.filter or ecs.all("move_info", "speed")
-	--complex version: ecs.all(ecs.any("com1", "com2"), ecs.any("com3", "com4"), ecs.no("com5", "com6"))
-	self:foreach(self.filter, function(ed)
-		ed.move_info.x = 3 
-		ed.speed = 4
+    self.filter = self.filter or ecs.all("move_info", "speed")
+    --complex version: ecs.all(ecs.any("com1", "com2"), ecs.any("com3", "com4"), ecs.no("com5", "com6"))
+    self:foreach(self.filter, function(ed)
+	ed.move_info.x = 3 
+	ed.speed = 4
     end)
 end
 world:add_system(move_sys)
